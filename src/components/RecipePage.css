@@ -6,7 +6,7 @@
 
 .recipe-title {
   font-size: 30px;
-  font-weight:bold;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
@@ -16,18 +16,16 @@
   margin-bottom: 20px;
 }
 
-
-.recipe-image{
+.recipe-image {
   max-width: 100%;
   height: auto;
   margin-bottom: 20px;
 }
 
-
 .ingredients-header,
 .instructions-header {
   cursor: pointer;
-  padding: 15px 0 15px 0;
+  padding: 15px 0;
   background-color: #864fce;
   color: white;
   width: 200px;
@@ -35,13 +33,14 @@
   box-shadow: 3px 3px 6px #999;
   border: 2px solid #ddd;
   margin: 0 auto;
-  margin-bottom: 10px; 
-  transition: background-color 0.3s ease; 
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+  text-align: center; 
 }
 
 .ingredients-header:hover,
 .instructions-header:hover {
-  background-color: #6b3ebd; 
+  background-color: #6b3ebd;
 }
 
 .ingredients-list {
@@ -49,6 +48,7 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+
 }
 
 .ingredient-item {
@@ -57,18 +57,18 @@
   flex-basis: calc(33.33% - 10px);
   padding: 5px;
   margin-right: 10px;
-  margin-bottom: 10px; 
-  display: flex; 
+  margin-bottom: 10px;
+  display: flex;
   align-items: center;
 }
 
 .ingredient-measurement {
-  flex-grow: 1; 
-  font-weight: bold; 
+  flex-grow: 1;
+  font-weight: bold;
 }
 
 .ingredient-name {
-  flex-grow: 3; 
+  flex-grow: 3;
 }
 
 .ingredient-space {
@@ -79,12 +79,29 @@
   display: block;
   margin-top: 20px;
   text-decoration: none;
-  color: #f1f4f7; 
+  color: #f1f4f7;
+  text-align: center; 
 }
 
 .back-link:hover {
-  text-decoration: underline; 
+  text-decoration: underline;
 }
 
+/* Styles pour le bouton Favori */
+.favorite-button {
+  padding: 25px 40px;
+  background-color: #ede9f1;
+  color: black;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; 
+}
 
+.favorite-button:hover {
+  background-color: #6b3ebd; 
+  color: white;
+}
 

@@ -19,6 +19,10 @@ function HomePage() {
           </li>
         ))}
       </ul>
+      <h2>Favorites</h2>
+      <Link to="/favorites" className="favorites-link">
+        Go to Favorites
+      </Link>
     </div>
   );
 }

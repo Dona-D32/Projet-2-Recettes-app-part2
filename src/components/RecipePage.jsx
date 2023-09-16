@@ -1,12 +1,32 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { useRecipeDetails } from '../services/api';
+import { addFavorite, removeFavorite } from '../store/favoritesSlice';
 import './RecipePage.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function RecipePage() {
   const { recipeId } = useParams();
   const { data: recipe } = useRecipeDetails(recipeId);
+
+  const favorites = useSelector(state => state.favorites.favorites); 
+  const dispatch = useDispatch();
+
+  const isFavorite = recipe && favorites.some(favorite => favorite.idMeal === recipe.idMeal);
+
+  const toggleFavorite = () => {
+    if (recipe) {
+      if (isFavorite) {
+        dispatch(removeFavorite(recipe.idMeal)); 
+      } else {
+        dispatch(addFavorite(recipe));
+      }
+    }
+  };
+  
+  
+  const favoriteButtonText = isFavorite ? 'Enlever des favoris' : 'Ajouter aux favoris';
 
   const [ingredientsVisible, setIngredientsVisible] = useState(false);
   const [instructionsVisible, setInstructionsVisible] = useState(false);
@@ -55,6 +75,10 @@ function RecipePage() {
           {instructionsVisible && (
             <p className="recipe-instructions">{recipe.strInstructions}</p>
           )}
+          
+          <button className={`favorite-button`} onClick={toggleFavorite}>
+            {favoriteButtonText}
+          </button>
         </>
       )}
       <Link to="/" className="back-link">
