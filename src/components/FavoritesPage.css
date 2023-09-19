@@ -39,3 +39,8 @@
 .button:hover {
   background-color: #151414;
 }
+
+.recipe-link:hover{
+  color: #8d1e7e;
+  font-weight: bold;
+}

@@ -18,7 +18,9 @@ function FavoritesPage() {
       <ul className="favorite-list">
         {favorites.map(recipe => (
           <li key={recipe.idMeal} className="favorite-item">
-            <p>{recipe.strMeal}</p>
+            <Link to={`/recipe/${recipe.idMeal}`} className="recipe-link">
+              {recipe.strMeal}
+            </Link>
             <button className="button" onClick={() => removeFromFavorites(recipe.idMeal)}>Remove</button>
           </li>
         ))}
